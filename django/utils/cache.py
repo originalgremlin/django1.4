@@ -126,7 +126,7 @@ def add_never_cache_headers(response):
     """
     Adds headers to a response to indicate that a page should never be cached.
     """
-    patch_response_headers(response, cache_timeout=-1)
+    patch_cache_control(response, cache_timeout=-1, no_store=True)
 
 def patch_vary_headers(response, newheaders):
     """
